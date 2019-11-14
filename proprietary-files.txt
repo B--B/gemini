@@ -15,7 +15,6 @@ vendor/etc/acdbdata/adsp_avs_config.acdb
 system/etc/silence_short.wav:vendor/etc/silence_short.wav
 
 # Audio amplifier firmware
-system/etc/firmware/tfa9891.cnt:vendor/firmware/tfa9891.cnt
 system/etc/firmware/tfa98xx.cnt:vendor/firmware/tfa98xx.cnt
 
 # Camera actuators
