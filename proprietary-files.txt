@@ -16,7 +16,6 @@ etc/silence_short.wav:vendor/etc/silence_short.wav
 
 # Audio amplifier firmware
 etc/firmware/tfa98xx.cnt:vendor/firmware/tfa98xx.cnt
-etc/firmware/tfa9891.cnt:vendor/firmware/tfa9891.cnt
 
 # Camera actuators
 vendor/lib/libactuator_ak7348.so
