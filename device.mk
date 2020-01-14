@@ -51,7 +51,8 @@ PRODUCT_PACKAGES += \
 
 # Device init scripts
 PRODUCT_PACKAGES += \
-    init.target.rc
+    init.target.rc \
+    init.recovery.qcom.rc
 
 # Fingerprint
 PRODUCT_PACKAGES += \
