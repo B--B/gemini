@@ -26,10 +26,6 @@
 #
 #
 
-on post-fs-data
-    chown system system /dev/sysmatdrv
-    chmod 0660 /dev/sysmatdrv
-
 service pixel-dance /vendor/bin/pixel.dance.sh
     class main
     user system
