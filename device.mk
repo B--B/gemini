@@ -32,6 +32,8 @@ PRODUCT_COPY_FILES += \
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
+PRODUCT_CHARACTERISTICS := nosdcard
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
