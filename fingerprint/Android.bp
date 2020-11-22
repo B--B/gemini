@@ -2,6 +2,7 @@ cc_binary {
     name: "android.hardware.biometrics.fingerprint@2.1-service.gemini",
     defaults: ["hidl_defaults"],
     init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.gemini.rc"],
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.gemini.xml"],
     proprietary: true,
     relative_install_path: "hw",
     srcs: [
