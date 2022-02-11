@@ -75,6 +75,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Pixel Dance
+PRODUCT_PACKAGES += \
+    pixel.dance.sh
+
 # TFA calibration
 PRODUCT_PACKAGES += \
     tfa-calib

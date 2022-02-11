@@ -30,5 +30,11 @@ on post-fs-data
     chown system system /dev/sysmatdrv
     chmod 0660 /dev/sysmatdrv
 
+service pixel-dance /vendor/bin/pixel.dance.sh
+    class main
+    user system
+    group system
+    oneshot
+
 on property:ro.boot.hwversion=2.2.0
     setprop sys.qcom.thermalcfg /vendor/etc/thermal-engine-8996-lite.conf
