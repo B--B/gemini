@@ -154,8 +154,6 @@ vendor/etc/qdcm_calib_data_lgd_fhd_cmd_incell_dsi_panel.xml|bb10ca71e619811a7e0b
 etc/qdcm_calib_data_sharp_fhd_cmd_incell_dsi_panel.xml:vendor/etc/qdcm_calib_data_sharp_fhd_cmd_incell_dsi_panel.xml
 
 # Fingerprint
-system/framework/vendor.qti.hardware.fingerprint-V1.0-java.jar
-vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.so|8fffdf6e530ef29a7db760d8a0f3659923753ec5
 
 # Graphics firmware
