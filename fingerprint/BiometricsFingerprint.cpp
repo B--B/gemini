@@ -355,16 +355,7 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
             }
             break;
         case FINGERPRINT_TEMPLATE_ENUMERATING:
-            ALOGD("onEnumerate(fid=%d, gid=%d, rem=%d)",
-                msg->data.enumerated.finger.fid,
-                msg->data.enumerated.finger.gid,
-                msg->data.enumerated.remaining_templates);
-            if (!thisPtr->mClientCallback->onEnumerate(devId,
-                    msg->data.enumerated.finger.fid,
-                    msg->data.enumerated.finger.gid,
-                    msg->data.enumerated.remaining_templates).isOk()) {
-                ALOGE("failed to invoke fingerprint onEnumerate callback");
-            }
+            // Ignored
             break;
     }
 }
