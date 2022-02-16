@@ -43,11 +43,7 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
     sInstance = this; // keep track of the most recent instance
     mDevice = openHal();
     if (!mDevice) {
-        using namespace std::chrono_literals;
-
-        ALOGE("Can't open HAL module. Exiting process...");
-        std::this_thread::sleep_for(500ms);
-        std::exit(EXIT_FAILURE);
+        ALOGE("Can't open HAL module.");
     }
 }
 
