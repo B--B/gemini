@@ -19,11 +19,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.qfp=false \
     ro.hardware.fingerprint=fpc \
     sys.fpc.tu.disabled=0
-
-# Device released with android M
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.first_api_level=23
-
-# BPF
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.kernel.ebpf.supported=true
