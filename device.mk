@@ -38,6 +38,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths_tasha.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha.xml
 
+# Google Camera
+PRODUCT_PACKAGES += \
+    com.google.android.GoogleCameraGood \
+    GoogleCameraGood
+
 # ConfigPanel
 PRODUCT_PACKAGES += \
     ConfigPanel
