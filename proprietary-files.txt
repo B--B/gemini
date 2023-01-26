@@ -155,7 +155,7 @@ vendor/etc/qdcm_calib_data_jdi_j1_fhd_cmd_incell_dsi_panel.xml|73c66f2479714619c
 vendor/etc/qdcm_calib_data_lgd_fhd_cmd_incell_dsi_panel.xml|bb10ca71e619811a7e0b44f2bad03f7b8eb7e324
 
 # Fingerprint
-system/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.so|15fa15959d44bdf3760a3009d6a8b61a7f9e8830
+system/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.so|bda2ab2c48826b139dfc4d921f9e4c0b708a3425
 
 # Graphics firmware
 vendor/firmware/a530_zap.b00
