@@ -1,11 +1,68 @@
 #!/vendor/bin/sh
 
-# Brightness
-BRG=echo #value
-# Color channel sysfs
-BLUE=/sys/class/leds/blue/brightness
-GREEN=/sys/class/leds/green/brightness
-RED=/sys/class/leds/red/brightness
+RED="/sys/class/leds/red/brightness"
+GREEN="/sys/class/leds/green/brightness"
+BLUE="/sys/class/leds/blue/brightness"
+
+# We set the maximum brightness to 255
+MAX_BRIGHTNESS=255
+# Number of colors of the rainbow
+NUM_COLORS=7
+
+# Function to calculate RGB values for each color of the rainbow
+# (https://stackoverflow.com/a/22649803)
+rainbow_color() {
+  if [ $1 -lt 60 ]; then
+    R=255
+    G=$(( 4 * $1 ))
+    B=0
+  elif [ $1 -lt 120 ]; then
+    R=$(( 255 - (4 * ($1 - 60)) ))
+    G=255
+    B=0
+  elif [ $1 -lt 180 ]; then
+    R=0
+    G=255
+    B=$(( 4 * ($1 - 120) ))
+  elif [ $1 -lt 240 ]; then
+    R=0
+    G=$(( 255 - (4 * ($1 - 180)) ))
+    B=255
+  elif [ $1 -lt 300 ]; then
+    R=$(( 4 * ($1 - 240) ))
+    G=0
+    B=255
+  else
+    R=255
+    G=0
+    B=$(( 255 - (4 * ($1 - 300)) ))
+  fi
+}
+
+rainbow() {
+    # Start a loop
+    while :; do
+        BOOT=$(getprop sys.boot_completed | grep "1")
+        if [ "$BOOT" == "1" ]; then
+        EXIT
+        else
+        # Cycle for each color of the rainbow
+        for i in $(seq 0 $(($NUM_COLORS - 1))); do
+        # We calculate the RGB values for the current color
+        rainbow_color $((360 * $i / $NUM_COLORS))
+        # We set the brightness value for each led based on the calculated RGB values
+        echo $MAX_BRIGHTNESS > $RED
+        echo $(( $MAX_BRIGHTNESS * $R / 255 )) > $RED
+        echo $MAX_BRIGHTNESS > $GREEN
+        echo $(( $MAX_BRIGHTNESS * $G / 255 )) > $GREEN
+        echo $MAX_BRIGHTNESS > $BLUE
+        echo $(( $MAX_BRIGHTNESS * $B / 255 )) > $BLUE
+        # Wait for the duration of the current color
+        sleep 0.3
+        done
+        fi
+    done
+}
 
 EXIT() {
     # Reset channels
@@ -13,47 +70,4 @@ EXIT() {
     exit 0
 }
 
-PIXEL() {
-    $BRG 255 > /sys/class/leds/red/brightness
-    $BRG 0 > /sys/class/leds/red/start_idx
-    $BRG "0,100,100,0" > /sys/class/leds/red/duty_pcts
-    $BRG 0 > /sys/class/leds/red/pause_hi
-    $BRG 0 > /sys/class/leds/red/pause_lo
-    $BRG 400 > /sys/class/leds/red/ramp_step_ms
-    $BRG 255 > /sys/class/leds/green/brightness
-    $BRG 7 > /sys/class/leds/green/start_idx
-    $BRG "0,0,100,100" > /sys/class/leds/green/duty_pcts
-    $BRG 0 > /sys/class/leds/green/pause_hi
-    $BRG 0 > /sys/class/leds/green/pause_lo
-    $BRG 400 > /sys/class/leds/green/ramp_step_ms
-    $BRG 255 > /sys/class/leds/blue/brightness
-    $BRG 14 > /sys/class/leds/blue/start_idx
-    $BRG "100,0,0,0" > /sys/class/leds/blue/duty_pcts
-    $BRG 0 > /sys/class/leds/blue/pause_hi
-    $BRG 0 > /sys/class/leds/blue/pause_lo
-    $BRG 400 > /sys/class/leds/blue/ramp_step_ms
-    $BRG 1 > /sys/class/leds/rgb/rgb_blink
-}
-
-RUN() {
-    case $PATTERN in
-    disabled) EXIT;;
-    pixel) PIXEL;;
-    esac
-}
-
-LOOP() {
-    # Start a loop
-    while :; do
-        BOOT=$(getprop sys.boot_completed | grep "1")
-    if [ "$BOOT" == "1" ]; then
-        PATTERN=pixel
-    fi
-    RUN
-    done
-}
-
-# Default
-PATTERN=pixel
-
-RUN
+rainbow
