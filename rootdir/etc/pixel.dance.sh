@@ -40,13 +40,8 @@ rainbow_color() {
 }
 
 rainbow() {
-    # Start a loop
-    while :; do
-        BOOT=$(getprop sys.boot_completed | grep "1")
-        if [ "$BOOT" == "1" ]; then
-        EXIT
-        else
-        # Cycle for each color of the rainbow
+    # Start the rainbow
+    for i in `seq 4`; do
         for i in $(seq 0 $(($NUM_COLORS - 1))); do
         # We calculate the RGB values for the current color
         rainbow_color $((360 * $i / $NUM_COLORS))
@@ -60,8 +55,8 @@ rainbow() {
         # Wait for the duration of the current color
         sleep 0.3
         done
-        fi
     done
+    EXIT
 }
 
 EXIT() {
