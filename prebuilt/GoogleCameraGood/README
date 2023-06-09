@@ -1,3 +1,11 @@
 Due to the APK size (133.8 Mb) i will not host GCAM apk in this repo.
 Version in use: SGCAM_8.4.400.42.XXX_STABLE_V35
 Download link: https://www.celsoazevedo.com/files/android/google-camera/dev-shamim/f/dl23/
+
+The specific Config xml has been created and shared by mandayugana (https://forum.xda-developers.com/m/mandayugana.4443824/), all credits goes to him
+Most important changes are:
+    * custom noise model, calculated using Morgenman Noise Modeller
+    * front camera black level set to 16
+    * video bitrate 5Mbps
+
+More info about Morgenman Noise Modeller: https://www.celsoazevedo.com/files/android/morgenman/noise-modeller-how-to/
