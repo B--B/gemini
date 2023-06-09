@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <permissions>
-    <privapp-permissions package="com.google.android.GoogleCameraGood">
+    <privapp-permissions package="com.shamim.cam">
         <permission name="android.permission.INSTALL_PACKAGE_UPDATES"/>
         <permission name="android.permission.BIND_WALLPAPER"/>
         <permission name="android.permission.REBOOT"/>
