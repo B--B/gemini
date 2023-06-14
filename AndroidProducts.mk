@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_gemini.mk
+    $(LOCAL_DIR)/lineage_gemini.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_gemini-user \
-    aosp_gemini-userdebug \
-    aosp_gemini-eng
+    lineage_gemini-user \
+    lineage_gemini-userdebug \
+    lineage_gemini-eng
