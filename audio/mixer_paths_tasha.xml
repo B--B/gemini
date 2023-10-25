@@ -2374,6 +2374,14 @@
         <path name="headphones" />
     </path>
 
+    <path name="hph-highquality-mode">
+        <ctl name="RX HPH Mode" value="CLS_AB" />
+    </path>
+
+    <path name="hph-lowpower-mode">
+        <ctl name="RX HPH Mode" value="CLS_H_LOHIFI" />
+    </path>
+
     <path name="voice-line">
         <path name="voice-headphones" />
     </path>
