@@ -2,24 +2,13 @@
     <hal format="hidl">
         <name>vendor.lineage.touch</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IKeyDisabler</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IKeySwapper</name>
-            <instance>default</instance>
-        </interface>
+        <fqname>@1.0::IKeyDisabler/default</fqname>
+        <fqname>@1.0::IKeySwapper/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.nxp.nxpnfc</name>
         <transport>hwbinder</transport>
         <impl level="generic"></impl>
-        <version>1.0</version>
-        <interface>
-            <name>INxpNfc</name>
-            <instance>default</instance>
-        </interface>
+        <fqname>@1.0::INxpNfc/default</fqname>
     </hal>
 </manifest>
