@@ -164,4 +164,4 @@ vendor/firmware/a530_zap.elf
 vendor/firmware/a530_zap.mdt
 
 # NFC firmware
--vendor/lib/libpn548ad_fw.so|e78f2c9e7a5cb0001d2f71a69f37ec8261fb05b8
+-vendor/lib64/libpn548ad_fw.so|e78f2c9e7a5cb0001d2f71a69f37ec8261fb05b8
