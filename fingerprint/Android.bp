@@ -1,3 +1,9 @@
+//
+// Copyright (C) 2017 The Android Open Source Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
 cc_binary {
     name: "android.hardware.biometrics.fingerprint@2.3-service.gemini",
     defaults: ["hidl_defaults"],
@@ -19,5 +25,4 @@ cc_binary {
         "android.hardware.biometrics.fingerprint@2.2",
         "android.hardware.biometrics.fingerprint@2.3",
     ],
-
 }
